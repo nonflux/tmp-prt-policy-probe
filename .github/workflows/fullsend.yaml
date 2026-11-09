@@ -1,0 +1,12 @@
+name: fullsend
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+  issue_comment:
+    types: [created]
+permissions: {}
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "event=${{ github.event_name }} ran"
